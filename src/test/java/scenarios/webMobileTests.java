@@ -18,7 +18,8 @@ public class webMobileTests extends BaseTest {
         setPageObject("web", getDriver());
         getPo().getWebElement("searchField")
                .sendKeys(ConfProperties.getProperty("searchText") + "\n");
-        Assert.assertTrue(getPo().getWebElement("results").getText()
-                                 .contains(ConfProperties.getProperty("results")));
+        String result = getPo().getWebElement("results").getText();
+
+        Assert.assertTrue(result.contains(ConfProperties.getProperty("searchText")));
     }
 }
