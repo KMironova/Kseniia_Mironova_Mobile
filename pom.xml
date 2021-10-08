@@ -109,7 +109,10 @@
     </profiles>
 
     <properties>
-        <suiteFile>${project.build.testOutputDirectory}/HW2TestRun.xml</suiteFile>
-        <token>7AQUpo8nHyYjH</token>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <token>7AQUpo8nHyYjH/SdikEaJvu5Wv5ny0q7KR5Ed6H2f3u6a6a5hI2fHZwOngJ2i1sPnqBz+LmH10A9HMCwYJFFOVe7H+olXi3T2KWEUIml2FXy/6Ue9Dip3hfPCYinCPe2ajZhtDYuanGNRwnEkQYDHcoExMMPtAHFrVTHvcP5lzvX6ayHg5LPSjJ6RuFPZm2G6RmU7dsFZY6eu3H84TlT/pit8w10qixcZAhOr40TJ0CDjtC0S0AGij1C46M+YBnsDoOjZpJi5LUbb6CqGYLE0zDiDRpKLDQTwrgHwd6iNTppI4zIs+vQV1BRFXSW2H1dEeq4vSbgXxB7K2d6HbNgRIGCAAfquW+G4JJO2U56f5u0zyMqzLhUPvNMMApBzvhKW8N85Cjy/6l3+mELBddlcTEtpKkd+WnhXMrjZuwy5mOPS6XpRSx7hVo5/K7OPE/hHwbajjqTUXpHP5+YcwKMEZNQwMFU5CajQTQCMNevpAJdtI5AY1/LFMZeHUcvDGfwsF6RTmCUnrz7CkaQlmP+Fb/3cctFvMzq0wQ9GeRE06EVlHSrbWRRNYePRi6zgWhlVfDIAtlyIIcDJ5sr4iAOftNmT+OQXvpF55PB6m+u7k3684JFdZ9799L4qCc28IFGq9yx3BhC6U1WTRt22/a8HiJWON4JZwaQZ0bJs7iQbAgSkJ8nCLQO1TXIxHc5xd/2LHfSRKOTLqmuy8REzPecIAc6zS28IeECIZvraDCdcIig9sMiuez6jElgo+Eyx7arsg/JwtDQYjOuDeG8eROfRs+hpZWoyml3teWyKqFXillwQx6/nPgRgkgAuRfip5H7pZe3P3HmY49iXUxuySaFEI1pueFTpGihubkrii6V1/xkZvVkS8Y+MDz1JWQ+6Y0s/4aHHjZpSZuD30QDmVFToAo</token>
     </properties>
 </project>
