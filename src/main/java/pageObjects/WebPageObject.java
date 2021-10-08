@@ -14,7 +14,7 @@ public class WebPageObject extends PageObject {
     @FindBy(xpath = "//input[@name='q']")
     WebElement searchField;
 
-    @FindBy(xpath = "//div//div[contains(@class, 'g')]")
+    @FindBy(xpath = "//div[@id='rso']//div[contains(@class, 'g')]")
     List<WebElement> results;
 
     public WebPageObject(AppiumDriver appiumDriver) {
