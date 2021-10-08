@@ -40,7 +40,7 @@
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <ts.appium>http://localhost:4723/wd/hub</ts.appium>
+                        <ts.appium>https://EPAM-TSTF:${token}@mobilecloud.epam.com/wd/hub</ts.appium>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -63,18 +63,53 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/nativeTNG.xml</suite.file>
+                <suite.file>${project.build.testOutputDirectory}/nativeTNG.xml</suite.file>
             </properties>
         </profile>
 
         <profile>
             <id>web</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/webTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>cloudWeb</id>
+            <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>./src/test/resources/webTNG.xml</suite.file>
+                <suite.file>${project.build.testOutputDirectory}/cloudWebTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>androidNativeWeb</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/androidNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>appleNativeWeb</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/appleNativeTNG.xml</suite.file>
             </properties>
         </profile>
     </profiles>
+
+    <properties>
+        <suiteFile>${project.build.testOutputDirectory}/HW2TestRun.xml</suiteFile>
+        <token>7AQUpo8nHyYjH</token>
+    </properties>
 </project>
