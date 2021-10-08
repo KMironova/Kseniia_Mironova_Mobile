@@ -8,9 +8,9 @@ import java.util.List;
 public class AssertionSteps {
 
     public static void verifyThatResultEqualsSearch(List<WebElement> result, String searchText) {
-        for (int i = 0; i < result.size(); i++) {
-            if(result.get(i).getText().equals(searchText)) {
-                Assert.assertTrue(result.contains(searchText));
+        for (WebElement searchElement : result) {
+            if(searchElement.getText().contains(searchText)) {
+                Assert.assertTrue(searchElement.getText().contains(searchText));
                 return;
             }
         }

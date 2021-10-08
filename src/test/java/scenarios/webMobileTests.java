@@ -24,6 +24,7 @@ public class webMobileTests extends BaseTest {
         WebPageObject webPageObject = new WebPageObject(getDriver());
         webPageObject.getSearchField().sendKeys(searchText + "\n");
         List<WebElement> result = webPageObject.getResults();
+
         AssertionSteps.verifyThatResultEqualsSearch(result, searchText);
     }
 }

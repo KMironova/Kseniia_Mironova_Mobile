@@ -78,17 +78,17 @@
         </profile>
 
         <profile>
-            <id>cloudWeb</id>
+            <id>androidWeb</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.build.testOutputDirectory}/cloudWebTNG.xml</suite.file>
+                <suite.file>${project.build.testOutputDirectory}/androidWebTNG.xml</suite.file>
             </properties>
         </profile>
 
         <profile>
-            <id>androidNativeWeb</id>
+            <id>androidNative</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
@@ -98,12 +98,22 @@
         </profile>
 
         <profile>
-            <id>appleNativeWeb</id>
+            <id>appleNative</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.build.testOutputDirectory}/appleNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>appleWeb</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/appleWebTNG.xml</suite.file>
             </properties>
         </profile>
     </profiles>
