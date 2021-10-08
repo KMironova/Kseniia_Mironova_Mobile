@@ -14,10 +14,17 @@
             <artifactId>java-client</artifactId>
             <version>7.3.0</version>
         </dependency>
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
         </dependency>
     </dependencies>
 
@@ -31,9 +38,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <ts.appium>http://localhost:4723/wd/hub</ts.appium>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>
@@ -54,20 +58,64 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/nativeTNG.xml</suite.file>
+                <suite.file>${project.build.testOutputDirectory}/nativeTNG.xml</suite.file>
             </properties>
         </profile>
 
         <profile>
             <id>web</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/webTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>androidWeb</id>
+            <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>./src/test/resources/webTNG.xml</suite.file>
+                <suite.file>${project.build.testOutputDirectory}/androidWebTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>androidNative</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/androidNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>appleWeb</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/appleWebTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>appleNative</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.build.testOutputDirectory}/appleNativeTNG.xml</suite.file>
             </properties>
         </profile>
     </profiles>
 
-
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 </project>
