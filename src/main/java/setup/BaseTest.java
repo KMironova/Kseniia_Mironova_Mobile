@@ -5,6 +5,7 @@ import lombok.SneakyThrows;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 import pageObjects.PageObject;
+import utils.ConfProperties;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -71,10 +72,10 @@ public class BaseTest implements IDriver {
         if(platformName.equals("iOS")) capabilities.setCapability("automationName","XCUITest");
 
         try {
-            String key = URLEncoder.encode(System.getProperty("API_KEY"), StandardCharsets.UTF_8.name());
+            String key = URLEncoder.encode(ConfProperties.getProperty("API_KEY"), StandardCharsets.UTF_8.name());
             appiumDriver = new AppiumDriver(
-                    new URL(format("https://%s:%s@%s/wd/hub", System.getProperty("PROJECT_NAME"),
-                                                         key, System.getProperty("APPIUM_HUB"))), capabilities);
+                    new URL(format("https://%s:%s@%s/wd/hub", ConfProperties.getProperty("PROJECT_NAME"),
+                                                         key, ConfProperties.getProperty("APPIUM_HUB"))), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
