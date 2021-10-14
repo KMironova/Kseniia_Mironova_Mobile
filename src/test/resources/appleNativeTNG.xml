@@ -3,7 +3,7 @@
     <parameter name="appType" value="native"/>
     <parameter name="udid" value="00008020-001634923E92002E"/>
     <parameter name="platformName" value="iOS"/>
-    <parameter name="bundleId" value="com.Spam.EPAMTestApp.ii"/>
+    <parameter name="bundleId" value="com.epam.EPAMTestApp.ii"/>
     <test name="iOS Native tests">
         <groups>
             <run>

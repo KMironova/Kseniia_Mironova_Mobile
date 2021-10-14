@@ -16,10 +16,6 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.String.format;
 
 public class BaseTest implements IDriver {
-    private static final String API_KEY = "your token";
-    private static final String PROJECT_NAME = "EPM-TSTF";
-    private static final String APPIUM_HUB = "mobilecloud.epam.com";
-
     private static AppiumDriver appiumDriver; // singleton
     IPageObject po;
 
@@ -75,9 +71,10 @@ public class BaseTest implements IDriver {
         if(platformName.equals("iOS")) capabilities.setCapability("automationName","XCUITest");
 
         try {
-            String key = URLEncoder.encode(API_KEY, StandardCharsets.UTF_8.name());
+            String key = URLEncoder.encode(System.getProperty("API_KEY"), StandardCharsets.UTF_8.name());
             appiumDriver = new AppiumDriver(
-                    new URL(format("https://%s:%s@%s/wd/hub", PROJECT_NAME, key, APPIUM_HUB)), capabilities);
+                    new URL(format("https://%s:%s@%s/wd/hub", System.getProperty("PROJECT_NAME"),
+                                                         key, System.getProperty("APPIUM_HUB"))), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
