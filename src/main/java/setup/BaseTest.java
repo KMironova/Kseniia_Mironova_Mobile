@@ -4,7 +4,6 @@ import io.appium.java_client.AppiumDriver;
 import lombok.SneakyThrows;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
-import pageObjects.PageObject;
 import utils.ConfProperties;
 
 import java.io.File;
@@ -18,14 +17,9 @@ import static java.lang.String.format;
 
 public class BaseTest implements IDriver {
     private static AppiumDriver appiumDriver; // singleton
-    IPageObject po;
 
     @Override
     public AppiumDriver getDriver() { return appiumDriver; }
-
-    public IPageObject getPo() {
-        return po;
-    }
 
     @Parameters({"platformName","appType","deviceName","udid","browserName","app","appPackage","appActivity","bundleId"})
     @BeforeSuite(alwaysRun = true)
@@ -38,9 +32,7 @@ public class BaseTest implements IDriver {
                       @Optional("") String appPackage,
                       @Optional("") String appActivity,
                       @Optional("") String bundleId) throws Exception {
-        System.out.println("Before: app type - "+appType);
         setAppiumDriver(platformName, deviceName, udid, browserName, app, appPackage, appActivity, bundleId);
-        setPageObject(appType, appiumDriver);
     }
 
     @AfterSuite(alwaysRun = true)
@@ -82,9 +74,5 @@ public class BaseTest implements IDriver {
 
         // Timeouts tuning
         appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    public void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
-        po = new PageObject(appType, appiumDriver);
     }
 }

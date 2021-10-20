@@ -4,10 +4,12 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class NativePageObject extends PageObject{
+@Getter
+public class NativePageObject {
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/email_sign_in_button")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@label='Sign In']")
@@ -15,7 +17,7 @@ public class NativePageObject extends PageObject{
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/login_email")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='user@example.com']")
-    WebElement loginEmailField;
+    WebElement  loginEmailField;
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/login_pwd")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@value='Required']")

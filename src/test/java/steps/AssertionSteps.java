@@ -17,7 +17,7 @@ public class AssertionSteps {
         Assert.fail("No equals result");
     }
 
-    public static void verifyThatCurrentPageIsCorrect(String currentPageName, String expectedPageName) {
-        Assert.assertEquals(currentPageName, expectedPageName);
+    public static void verifyThatCurrentPageIsCorrect(WebElement currentPageName) {
+        Assert.assertTrue(currentPageName.getText().contains("Budget"));
     }
 }

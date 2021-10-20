@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 @Getter
-public class WebPageObject extends PageObject {
+public class WebPageObject {
 
     @FindBy(xpath = "//input[@name='q']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='Пошук']")
